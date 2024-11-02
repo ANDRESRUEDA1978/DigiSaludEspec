@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: busqueda-profesionales-ms
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: busqueda-profesionales-ms
+  template:
+    metadata:
+      labels:
+        app: busqueda-profesionales-ms
+    spec:
+      containers:
+      - name: busqueda-profesionales-container
+        image: us-central1-docker.pkg.dev/microservicios-salud/busqueda-repo/busqueda-profesionales-ms:latest
+        ports:
+        - containerPort: 8082
+      restartPolicy: Always

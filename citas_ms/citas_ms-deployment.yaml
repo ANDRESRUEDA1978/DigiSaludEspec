@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: citas-ms
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: citas-ms
+  template:
+    metadata:
+      labels:
+        app: citas-ms
+    spec:
+      containers:
+      - name: citas-container
+        image: us-central1-docker.pkg.dev/microservicios-salud/citas-repo/citas-ms:latest
+        ports:
+        - containerPort: 8085
+      restartPolicy: Always
