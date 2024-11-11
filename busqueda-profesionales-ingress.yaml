@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: busqueda-profesionales-ingress
+  namespace: busqueda-profesionales
+  annotations:
+    kubernetes.io/ingress.global-static-ip-name: "busqueda-profesionales-static-ip"
+spec:
+  rules:
+  - host: busqueda-profesionales-ms.digisaludespec.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: busqueda-profesionales-ms-service
+            port:
+              number: 80

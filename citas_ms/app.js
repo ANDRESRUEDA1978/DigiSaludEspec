@@ -5,10 +5,10 @@ const app = express();
 
 // Configurar conexión a MySQL en Google Cloud SQL
 const db = mysql.createConnection({
-    host: '35.224.151.83',  // Cambia esto por la IP pública o el nombre de conexión de tu instancia en Google Cloud SQL
-    user: 'ANDRESRUEDA1978',                  // Usuario configurado en Google Cloud SQL
-    password: 'oRGHEMTYRANT1978',                 // Contraseña del usuario
-    database: 'citas_db'                       // Nombre de la base de datos
+    host: '34.55.204.103',  // Dirección IP pública de la instancia
+    user: 'ANDRESRUEDA1978', // Usuario configurado
+    password: 'oRGHEMTYRANT1978', // Contraseña del usuario
+    database: 'citas_db' // Nombre de la base de datos
 });
 
 // Conectar a la base de datos

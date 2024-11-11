@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: busqueda-profesionales-ms
+  namespace: busqueda-profesionales
 spec:
   replicas: 3
   selector:
@@ -15,6 +16,7 @@ spec:
       containers:
       - name: busqueda-profesionales-container
         image: us-central1-docker.pkg.dev/microservicios-salud/busqueda-repo/busqueda-profesionales-ms:latest
+        imagePullPolicy: Always  # Añadida esta línea
         ports:
         - containerPort: 8082
-      restartPolicy: Always
+

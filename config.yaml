@@ -1,0 +1,31 @@
+swagger: "2.0"
+info:
+  title: "API Gateway for DigiSaludEspec"
+  description: "API Gateway configuration for microservices citas_ms and busqueda_profesionales_ms"
+  version: "1.0.0"
+paths:
+  /citas:
+    get:
+      operationId: "getCitas"
+      x-google-backend:
+        address: https://citas-ms.digisaludespec.com # Reemplaza esta IP por el DNS de citas_ms si ya está configurado
+      responses:
+        '200':
+          description: "Response from citas_ms"
+  /busqueda-profesionales:
+    get:
+      operationId: "getBusquedaProfesionales"
+      x-google-backend:
+        address: https://busqueda-profesionales-ms.digisaludespec.com # Reemplaza esta IP por el DNS de busqueda_profesionales_ms si ya está configurado
+      responses:
+        '200':
+          description: "Response from busqueda_profesionales_ms"
+
+
+
+
+
+
+
+
+

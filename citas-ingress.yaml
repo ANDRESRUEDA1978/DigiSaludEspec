@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: citas-ingress
+  namespace: citas
+  annotations:
+    kubernetes.io/ingress.global-static-ip-name: "salud-static-ip"
+spec:
+  rules:
+  - host: citas-ms.digisaludespec.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: citas-ms-service
+            port:
+              number: 80
